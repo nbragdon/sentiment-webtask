@@ -47,6 +47,9 @@ module.exports = function (context, cb) {
               .then((res) => {
                   logger.log({ responseTime: res.ts, message: 'Message Sent' });
               })
+              .catch((err) => {
+                logger.error('Failed to add reaction', err)
+              })
       }
     } catch (err) {
       logger.error(err)

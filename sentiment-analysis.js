@@ -45,7 +45,7 @@ module.exports = function (context, cb) {
       if (context.body.event.username != 'bot' && reactionEmojiName !== null) {
           slackWebClient.reactions.add({ name: reactionEmojiName, channel: channel, timestamp: context.body.event.ts })
               .then((res) => {
-                  logger.log({ responseTime: res.ts, message: 'Message Sent' });
+                  logger.info({ responseTime: res.ts, message: 'Message Sent' });
               })
               .catch((err) => {
                 logger.error('Failed to add reaction', err)

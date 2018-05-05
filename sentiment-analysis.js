@@ -11,24 +11,26 @@ const POSITIVE_SENTIMENT_EMOJI = 'thumbsup';
 const NEGATIVE_SENTIMENT_EMOJI = 'thumbsdown';
 
 const sentiment = new Sentiment();
-const slackWebClient = new WebClient(context.secrets.slackSentimentApiToken);
 
 module.exports = function (context, cb) {
     logger.info({ message: 'Entered sentiment handler', contextBody: context.body })
     try {
-      let user = context.body.event.user,
-          messageText = context.body.event.text,
-          channel = context.body.event.channel,
-          token = context.body.token,
-          reactionEmojiName = null;
+      const user = context.body.event.user;
+      const messageText = context.body.event.text;
+      const channel = context.body.event.channel;
+      const token = context.body.token;
+      
+      let reactionEmojiName = null;
   
       logger.info({ user: user, messageText: messageText, channel: channel });
       
       if (context.secrets.slackAppVerificationToken !== token) {
         throw Error('Invalid verification token')
       }
-  
-      let messageSentiment = sentiment.analyze(messageText);
+      
+      const slackWebClient = new WebClient(context.secrets.slackSentimentApiToken);
+      
+      const messageSentiment = sentiment.analyze(messageText);
   
       logger.info({ messageSentiment: messageSentiment })
   

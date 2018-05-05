@@ -30,9 +30,9 @@ module.exports = function (context, cb) {
     let reactionEmojiName = null;
 
     if (messageSentiment.score < 0) {
-        reactionEmojiName = POSITIVE_SENTIMENT_EMOJI;
-    } else if (messageSentiment.score > 0) {
         reactionEmojiName = NEGATIVE_SENTIMENT_EMOJI;
+    } else if (messageSentiment.score > 0) {
+        reactionEmojiName = POSITIVE_SENTIMENT_EMOJI;
     }
 
     logger.info({ reactionEmojiName: reactionEmojiName })
@@ -42,7 +42,7 @@ module.exports = function (context, cb) {
             .then((res) => {
                 logger.log({ responseTime: res.ts, message: 'Message Sent' });
             })
-            .catch(console.error);
+            .catch(logger.error);
     }
 
     cb(null, context.body.challenge);

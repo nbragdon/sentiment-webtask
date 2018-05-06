@@ -1,11 +1,22 @@
 {
+    "name": "slack-sentiment-analysis",
+    "version": "0.1.0",
+    "description": "A sample Node.js WebTask that receives events from slack and then adds reactions based on the sentiment of the message",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nbragdon/sentiment-webtask.git"
+    },
+    "author": "Nick Bragdon",
     "dependencies": {
         "sentiment": "5.0.0",
         "@slack/client": "4.2.0",
         "bunyan": "1.8.12"
     },
     "devDependencies": {
-        "chai": "^4.1.2",
-        "mocha": "^5.1.1"
-    }
+        "jest": "^22.4.3"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "license": "MIT"
 }

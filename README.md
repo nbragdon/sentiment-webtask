@@ -23,10 +23,15 @@ That should be everything you will need to setup to get real time sentiment anal
 ## Next Steps
 The project could be taken in another direction where you start saving the slack/sentiment data in a DB.
 Then you could run analysis on it to get answers to questions such as:
+
 "Do these two people usually have positive or negative conversations?"
+
 "What is the general sentiment for talk in this channel?"
+
 "What are the most common positive words used?"
+
 "What are the most common negative words used?"
+
 
 These are just some of the questions you could answer with the data.
 

@@ -25,4 +25,4 @@ Then you could run analysis on it to get answers to questions such as:
 "What are the most common positive words used?"
 "What are the most common negative words used?"
 
-These are just some of the questions you could answer with the data. 
+These are just some of the questions you could answer with the data.

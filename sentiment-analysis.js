@@ -29,7 +29,6 @@ module.exports = function (context, cb) {
         }
 
         const slackWebClient = new WebClient(context.secrets.slackSentimentApiToken);
-
         const messageSentiment = sentiment.analyze(messageText);
 
         logger.info({ messageSentiment: messageSentiment })
